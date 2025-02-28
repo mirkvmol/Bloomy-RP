@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --brand-white: rgba(221, 221, 221, 1);
+  --brand-gray: #f5f5f5;
+  --brand-black: rgba(0, 0, 0, 0.6);
+  --brand-orange: rgba(224, 178, 25, 1);
+  --brand-orange-dark: rgba(224, 178, 25, 0.8); /* Corrected variable name */
+}
+
+body {
+  font-family: "Roboto", serif;
+  background-color: black;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--brand-gray);
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+a:hover {
+  color: var(--brand-orange);
+  text-decoration: overline 0.125rem var(--brand-orange);
+}
+
+.container {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* HEADER */
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9375rem;
+  background-color: var(--brand-black);
+}
+
+.header__logo {
+  width: 9.375rem;
+}
+
+.header__navigation--list {
+  display: flex;
+  gap: 1.5625rem;
+}
+
+.header__button {
+  width: 10rem;
+  height: 2.5rem;
+  border: 0.0625rem solid var(--brand-orange);
+  border-radius: 2.3125rem;
+  background-color: var(--brand-orange);
+  font-weight: 700;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__button:hover {
+  background-color: var(--brand-orange-dark); /* Corrected variable name */
+  box-shadow: var(--brand-orange) 0.0625rem 0.0625rem 0.0625rem 0.0625rem inset;
+}
+
+/* --- SOCIAL WRAPPER --- */
+.social__wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.gta__hero {
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.social__cards {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5625rem;
+  width: 100%;
+}
+
+/* --- CARDS --- */
+.card {
+  width: 18.75rem;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  color: #fff;
+  box-shadow: 0 0.5rem 0.9375rem rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  gap: 0.1875rem;
+  text-align: left;
+}
+
+.card:hover {
+  transform: translateY(-0.625rem);
+}
+
+.card__tg {
+  background: linear-gradient(135deg, #0088cc, #00aaff);
+}
+
+.card__youtube {
+  background: linear-gradient(135deg, #ff0000, #c4302b);
+}
+
+.card__discord {
+  background: linear-gradient(135deg, #5865f2, #7289da);
+}
+
+.card__instagram {
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+}
+
+.card__go {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+.mobile__list {
+  display: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brand-white);
+}
+/* --- RESPONSIVE DESIGN --- */
+@media screen and (max-width: 1024px) {
+  .gta__hero {
+    content: url("/images/bloomy-gta-character-tall.png");
+  }
+
+  .header__wrapper {
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.9375rem;
+    text-align: center;
+  }
+
+  .header__logo {
+    width: 7.5rem;
+  }
+
+  .header__navigation--list {
+    gap: 0.9375rem;
+  }
+
+  .social__cards {
+    top: 60%;
+    transform: translate(-50%, -20%);
+  }
+
+  .card {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__navigation--list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 3.75rem;
+    left: 0;
+    width: 100%;
+    background-color: var(--brand-black);
+    padding: 0.9375rem;
+    text-align: center;
+    z-index: 100;
+  }
+
+  .header__navigation--list.active {
+    display: flex;
+  }
+
+  .menu__icon {
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+  }
+
+  .menu__icon img {
+    width: 100%;
+    height: auto;
+  }
+
+  .header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.9375rem;
+  }
+}
+
+.social__cards {
+  top: 65%;
+  transform: translate(-50%, -15%);
+}
+
+.card {
+  width: 90%;
+}
+
+.close-menu {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  text-align: right;
+  padding: 0.625rem;
+}
+
+.close-menu:hover {
+  color: var(--brand-orange);
+}
+
+@media screen and (max-width: 480px) {
+  .mobile__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9375rem;
+  }
+  .header__navigation--list {
+    display: none;
+  }
+
+  .header__button {
+    font-size: 0.75rem;
+    width: 90%;
+  }
+
+  .social__cards {
+    top: 70%;
+    transform: translate(-50%, -10%);
+  }
+
+  .card {
+    width: 100%;
+    padding: 0.9375rem;
+  }
+
+  .footer__wrapper {
+    flex-direction: column;
+    gap: 0.9375rem;
+    text-align: center;
+  }
+}
