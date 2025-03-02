@@ -12,6 +12,7 @@ body {
   font-family: "Roboto", serif;
   background-image: url(/images/bloomy-background.jpg);
   background-repeat: no-repeat;
+  background-position: top;
 }
 
 html {
@@ -362,6 +363,14 @@ header a:hover {
 
 /* Mobile screens */
 @media (max-width: 48rem) {
+  body {
+    background-position: calc(50% - 250px) center;
+  }
+
+  .menu__icon {
+    padding-top: 25px;
+  }
+
   .header__logo {
     width: 7.5rem;
     height: auto;
@@ -369,7 +378,7 @@ header a:hover {
 
   .header__button {
     width: 8.75rem;
-    font-size: 0.75rem;
+    font-size: 1rem;
   }
   .main__wrapper {
     padding-top: 9.375rem;
